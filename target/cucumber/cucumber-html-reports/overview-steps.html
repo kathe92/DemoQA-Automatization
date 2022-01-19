@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>18 Jan 2022, 15:27</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.FirstTestRadioButton.the_system_show_a_the_message_you_have_selected_yes()</td>
+              <td>1</td>
+              <td class="duration" data-value="361299900">0.361</td>
+              <td class="duration" data-value="361299900">0.361</td>
+              <td class="duration" data-value="361299900">0.361</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.FirstTestRadioButton.the_user_click_on_yes_radio_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="91943500">0.091</td>
+              <td class="duration" data-value="91943500">0.091</td>
+              <td class="duration" data-value="91943500">0.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.FirstTestRadioButton.the_user_search_for_the_yes_radio_button_in_the_section_elements_radio_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="9093292400">9.093</td>
+              <td class="duration" data-value="9093292400">9.093</td>
+              <td class="duration" data-value="9093292400">9.093</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.SecondTestRadioButton.the_system_show_a_the_message_you_have_selected_impressive()</td>
+              <td>1</td>
+              <td class="duration" data-value="432752300">0.432</td>
+              <td class="duration" data-value="432752300">0.432</td>
+              <td class="duration" data-value="432752300">0.432</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.SecondTestRadioButton.the_user_first_click_on_yes_radio_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="94946600">0.094</td>
+              <td class="duration" data-value="94946600">0.094</td>
+              <td class="duration" data-value="94946600">0.094</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.SecondTestRadioButton.the_user_later_click_on_impressive_radio_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="74956700">0.074</td>
+              <td class="duration" data-value="74956700">0.074</td>
+              <td class="duration" data-value="74956700">0.074</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.RadioButton.SecondTestRadioButton.the_user_search_for_the_impressive_radio_button_in_the_section_elements_radio_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="8622268300">8.622</td>
+              <td class="duration" data-value="8622268300">8.622</td>
+              <td class="duration" data-value="8622268300">8.622</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_system_show_all_items_deselect()</td>
+              <td>1</td>
+              <td class="duration" data-value="396772300">0.396</td>
+              <td class="duration" data-value="396772300">0.396</td>
+              <td class="duration" data-value="396772300">0.396</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_click_on_the_first_item_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="88949800">0.088</td>
+              <td class="duration" data-value="88949800">0.088</td>
+              <td class="duration" data-value="88949800">0.088</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_click_on_the_second_item_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="99942600">0.099</td>
+              <td class="duration" data-value="99942600">0.099</td>
+              <td class="duration" data-value="99942600">0.099</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_click_on_the_third_item_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="23987400">0.023</td>
+              <td class="duration" data-value="23987400">0.023</td>
+              <td class="duration" data-value="23987400">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_deselects_all_items()</td>
+              <td>1</td>
+              <td class="duration" data-value="159909700">0.159</td>
+              <td class="duration" data-value="159909700">0.159</td>
+              <td class="duration" data-value="159909700">0.159</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_search_for_the_list_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="8081606700">8.081</td>
+              <td class="duration" data-value="8081606700">8.081</td>
+              <td class="duration" data-value="8081606700">8.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.FirstTest.the_user_wait_second(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="5994800">0.005</td>
+              <td class="duration" data-value="5994800">0.005</td>
+              <td class="duration" data-value="5994800">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_system_show_the_items_deselect()</td>
+              <td>1</td>
+              <td class="duration" data-value="313818100">0.313</td>
+              <td class="duration" data-value="313818100">0.313</td>
+              <td class="duration" data-value="313818100">0.313</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_five_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="261306300">0.261</td>
+              <td class="duration" data-value="261306300">0.261</td>
+              <td class="duration" data-value="261306300">0.261</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_five_of_the_list_again()</td>
+              <td>1</td>
+              <td class="duration" data-value="49971600">0.049</td>
+              <td class="duration" data-value="49971600">0.049</td>
+              <td class="duration" data-value="49971600">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_nine_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="71959400">0.071</td>
+              <td class="duration" data-value="71959400">0.071</td>
+              <td class="duration" data-value="71959400">0.071</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_nine_of_the_list_again()</td>
+              <td>1</td>
+              <td class="duration" data-value="53969200">0.053</td>
+              <td class="duration" data-value="53969200">0.053</td>
+              <td class="duration" data-value="53969200">0.053</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_one_of_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="146916900">0.146</td>
+              <td class="duration" data-value="146916900">0.146</td>
+              <td class="duration" data-value="146916900">0.146</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_click_on_the_item_one_of_the_list_again()</td>
+              <td>1</td>
+              <td class="duration" data-value="41977100">0.041</td>
+              <td class="duration" data-value="41977100">0.041</td>
+              <td class="duration" data-value="41977100">0.041</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_search_for_the_grid_tab()</td>
+              <td>1</td>
+              <td class="duration" data-value="7718615000">7.718</td>
+              <td class="duration" data-value="7718615000">7.718</td>
+              <td class="duration" data-value="7718615000">7.718</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.Selectable.SecondTest.the_user_wait_seconds(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="14989300">0.014</td>
+              <td class="duration" data-value="14989300">0.014</td>
+              <td class="duration" data-value="14989300">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_system_show_a_popup_with_the_confirmation_of_the_new_record()</td>
+              <td>1</td>
+              <td class="duration" data-value="450741700">0.450</td>
+              <td class="duration" data-value="450741700">0.450</td>
+              <td class="duration" data-value="450741700">0.450</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_clickon_the_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="137920400">0.137</td>
+              <td class="duration" data-value="137920400">0.137</td>
+              <td class="duration" data-value="137920400">0.137</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_enter_a_mobile_number()</td>
+              <td>1</td>
+              <td class="duration" data-value="214877800">0.214</td>
+              <td class="duration" data-value="214877800">0.214</td>
+              <td class="duration" data-value="214877800">0.214</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_enter_first_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="140914200">0.140</td>
+              <td class="duration" data-value="140914200">0.140</td>
+              <td class="duration" data-value="140914200">0.140</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_enter_last_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="95946000">0.095</td>
+              <td class="duration" data-value="95946000">0.095</td>
+              <td class="duration" data-value="95946000">0.095</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_fill_all_the_required_fields_of_the_form()</td>
+              <td>1</td>
+              <td class="duration" data-value="8245979400">8.245</td>
+              <td class="duration" data-value="8245979400">8.245</td>
+              <td class="duration" data-value="8245979400">8.245</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.FirstTest.the_user_select_a_gender()</td>
+              <td>1</td>
+              <td class="duration" data-value="71958400">0.071</td>
+              <td class="duration" data-value="71958400">0.071</td>
+              <td class="duration" data-value="71958400">0.071</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.SecondTest.the_system_not_allow_send_the_form()</td>
+              <td>1</td>
+              <td class="duration" data-value="319323000">0.319</td>
+              <td class="duration" data-value="319323000">0.319</td>
+              <td class="duration" data-value="319323000">0.319</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.SecondTest.the_user_click_on_the_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="89397000">0.089</td>
+              <td class="duration" data-value="89397000">0.089</td>
+              <td class="duration" data-value="89397000">0.089</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebForm.SecondTest.the_user_will_not_fill_in_any_form_fields()</td>
+              <td>1</td>
+              <td class="duration" data-value="7535575300">7.535</td>
+              <td class="duration" data-value="7535575300">7.535</td>
+              <td class="duration" data-value="7535575300">7.535</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_record_was_updated()</td>
+              <td>1</td>
+              <td class="duration" data-value="411797500">0.411</td>
+              <td class="duration" data-value="411797500">0.411</td>
+              <td class="duration" data-value="411797500">0.411</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_user_click_on_save_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="119931800">0.119</td>
+              <td class="duration" data-value="119931800">0.119</td>
+              <td class="duration" data-value="119931800">0.119</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_user_click_on_the_edit_button_of_the_first_row()</td>
+              <td>1</td>
+              <td class="duration" data-value="184761200">0.184</td>
+              <td class="duration" data-value="184761200">0.184</td>
+              <td class="duration" data-value="184761200">0.184</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_user_enter_a_new_department()</td>
+              <td>1</td>
+              <td class="duration" data-value="280247300">0.280</td>
+              <td class="duration" data-value="280247300">0.280</td>
+              <td class="duration" data-value="280247300">0.280</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_user_searches_for_the_department_stored_in_the_first_row()</td>
+              <td>1</td>
+              <td class="duration" data-value="92948600">0.092</td>
+              <td class="duration" data-value="92948600">0.092</td>
+              <td class="duration" data-value="92948600">0.092</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefinitions.WebTables.FirstTest.the_user_searches_for_the_first_row_in_the_table_located_in_the_section_web_tables()</td>
+              <td>1</td>
+              <td class="duration" data-value="8075612700">8.075</td>
+              <td class="duration" data-value="8075612700">8.075</td>
+              <td class="duration" data-value="8075612700">8.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>39</td>
+            <td>39</td>
+            <td class="duration">1.609</td>
+            <td class="duration">9.093</td>
+            <td class="duration">1:2.770</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
